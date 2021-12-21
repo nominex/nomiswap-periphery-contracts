@@ -4,8 +4,8 @@ import { deployContract } from 'ethereum-waffle'
 
 import { expandTo18Decimals } from './utilities'
 
-import PancakeFactory from '@uniswap/v2-core/build/PancakeFactory.json'
-import IPancakePair from '@uniswap/v2-core/build/IPancakePair.json'
+import PancakeFactory from '@nominex/nomiswap-core/build/PancakeFactory.json'
+import INomiswapPair from '@nominex/nomiswap-core/build/INomiswapPair.json'
 
 import ERC20 from '../../build/ERC20.json'
 import WETH9 from '../../build/WETH9.json'
@@ -71,7 +71,7 @@ export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Pro
   // initialize V2
   await factoryV2.createPair(tokenA.address, tokenB.address)
   const pairAddress = await factoryV2.getPair(tokenA.address, tokenB.address)
-  const pair = new Contract(pairAddress, JSON.stringify(IPancakePair.abi), provider).connect(wallet)
+  const pair = new Contract(pairAddress, JSON.stringify(INomiswapPair.abi), provider).connect(wallet)
 
   const token0Address = await pair.token0()
   const token0 = tokenA.address === token0Address ? tokenA : tokenB
@@ -79,7 +79,7 @@ export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Pro
 
   await factoryV2.createPair(WETH.address, WETHPartner.address)
   const WETHPairAddress = await factoryV2.getPair(WETH.address, WETHPartner.address)
-  const WETHPair = new Contract(WETHPairAddress, JSON.stringify(IPancakePair.abi), provider).connect(wallet)
+  const WETHPair = new Contract(WETHPairAddress, JSON.stringify(INomiswapPair.abi), provider).connect(wallet)
 
   return {
     token0,

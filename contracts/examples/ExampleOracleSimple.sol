@@ -1,7 +1,7 @@
 pragma solidity =0.6.6;
 
-import '@uniswap/v2-core/contracts/interfaces/IPancakeFactory.sol';
-import '@uniswap/v2-core/contracts/interfaces/IPancakePair.sol';
+import '@nominex/nomiswap-core/contracts/interfaces/INomiswapFactory.sol';
+import '@nominex/nomiswap-core/contracts/interfaces/INomiswapPair.sol';
 import '@uniswap/lib/contracts/libraries/FixedPoint.sol';
 
 import '../libraries/PancakeOracleLibrary.sol';
@@ -14,7 +14,7 @@ contract ExampleOracleSimple {
 
     uint public constant PERIOD = 24 hours;
 
-    IPancakePair immutable pair;
+    INomiswapPair immutable pair;
     address public immutable token0;
     address public immutable token1;
 
@@ -25,7 +25,7 @@ contract ExampleOracleSimple {
     FixedPoint.uq112x112 public price1Average;
 
     constructor(address factory, address tokenA, address tokenB) public {
-        IPancakePair _pair = IPancakePair(PancakeLibrary.pairFor(factory, tokenA, tokenB));
+        INomiswapPair _pair = INomiswapPair(PancakeLibrary.pairFor(factory, tokenA, tokenB));
         pair = _pair;
         token0 = _pair.token0();
         token1 = _pair.token1();
