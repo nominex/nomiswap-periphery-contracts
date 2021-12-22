@@ -2,7 +2,7 @@ const NomiswapRouter = artifacts.require('NomiswapRouter')
 
 const contractsAddresses = {
   'testnet': {
-    weth: '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e',
+    weth: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
     factory: '0xd16b798daD7502A7E443dE5C589F30f70846d499',
   },
   'bsc': {
