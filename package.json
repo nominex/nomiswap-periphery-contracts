@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "@nominex/nomiswap-core": "git+ssh://git@bitbucket.org:bitchangers/dex-contracts.git",
+    "@truffle/hdwallet-provider": "2.0.0",
     "@uniswap/lib": "1.1.1",
     "@uniswap/v2-core": "^1.0.1",
     "truffle-hdwallet-provider": "^1.0.17",
@@ -45,7 +46,8 @@
     "postcompile": "yarn copy-v1-artifacts",
     "pretest": "yarn compile",
     "test": "mocha",
-    "prepublishOnly": "yarn test"
+    "prepublishOnly": "yarn test",
+    "local": "truffle migrate --network local --reset"
   },
   "license": "GPL-3.0-or-later"
 }
