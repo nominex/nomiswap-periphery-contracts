@@ -47,7 +47,8 @@
     "pretest": "yarn compile",
     "test": "mocha",
     "prepublishOnly": "yarn test",
-    "local": "truffle migrate --network local --reset"
+    "local": "truffle migrate --network local",
+    "testnet": "truffle migrate --network testnet"
   },
   "license": "GPL-3.0-or-later"
 }

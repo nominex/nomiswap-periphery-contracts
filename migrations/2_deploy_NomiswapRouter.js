@@ -1,11 +1,11 @@
 const NomiswapRouter = artifacts.require('NomiswapRouter')
 
 const contractsAddresses = {
-  97: {
-    weth: '0x0000000000000000000000000000000000000000',    // todo: paste a valid address
-    factory: '0x0000000000000000000000000000000000000000', // todo: paste a valid address
+  'testnet': {
+    weth: '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e',
+    factory: '0xd16b798daD7502A7E443dE5C589F30f70846d499',
   },
-  56: {
+  'bsc': {
     weth: '0x0000000000000000000000000000000000000000',    // todo: paste a valid address
     factory: '0x0000000000000000000000000000000000000000', // todo: paste a valid address
   },

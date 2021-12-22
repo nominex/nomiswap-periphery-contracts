@@ -18,6 +18,19 @@ module.exports = {
       timeoutBlocks: 4000, 
       networkCheckTimeout : 100,
     },
+    testnet: {
+      network_id: '97',
+      provider: () => {
+        const testnetMnemonic = fs.readFileSync(path.join(__dirname, './.secret/testnet.secret')).toString().trim()
+
+        return new HDWalletProvider(testnetMnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545/`)
+      },
+      confirmations: 0,
+      deploymentPollingInterval: 1000000,
+      skipDryRun: true,
+      timeoutBlocks: 4000, 
+      networkCheckTimeout : 1000000,
+    },
   },
 
   // Set default mocha options here, use special reporters etc.
