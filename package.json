@@ -1,31 +1,28 @@
 {
-  "name": "pancakeswap-peripheral",
-  "version": "1.1.0-beta.0",
-  "description": "🎚 Peripheral smart contracts for interacting with pancake",
+  "name": "nomiswap-peripheral",
+  "version": "1.1.0",
+  "description": "🎚 Peripheral smart contracts for interacting with nomiswap",
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://pancakeswap.finance",
+  "homepage": "https://nomiswap.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pancakeswap/pancake-swap-periphery.git"
+    "url": "https://github.com/nominex/nomiswap-swap-periphery.git"
   },
   "files": [
     "build",
     "contracts"
   ],
-  "dependencies": {
+  "devDependencies": {
     "@nominex/nomiswap-core": "git+ssh://git@bitbucket.org:bitchangers/dex-contracts.git",
     "@truffle/hdwallet-provider": "2.0.0",
-    "@uniswap/lib": "1.1.1",
-    "@uniswap/v2-core": "^1.0.1",
     "truffle-hdwallet-provider": "^1.0.17",
-    "truffle-plugin-verify": "^0.4.0"
-  },
-  "devDependencies": {
+    "truffle-plugin-verify": "^0.4.0",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
+    "@uniswap/lib": "4.0.1-alpha",
     "ethereum-waffle": "^2.4.1",
     "ethereumjs-util": "^6.2.0",
     "mocha": "^6.2.2",
