@@ -20,7 +20,7 @@ library NomiswapLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'4cbf3fd8ad5597eff426ad3a7c39cc1a967bbb2db9ad19bff7aeb234a8c6a19e' // init code hash
+                hex'87673f735b0b85611f7db17755d3a2f5e300e1419413a9de5e8c7a394d101b35' // init code hash
             ))));
     }
 
