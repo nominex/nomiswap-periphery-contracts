@@ -44,7 +44,7 @@ module.exports = {
     },
     mainnet: {
       network_id: "56",
-      provider: () => provider("https://bsc-dataseed1.binance.org/"),
+      provider: () => provider("https://bsc-dataseed4.ninicoin.io/"),
       networkCheckTimeout: 1000000,
       gasPrice: 5000000000
     }
