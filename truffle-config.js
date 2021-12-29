@@ -15,7 +15,7 @@ function provider(url) {
   const engine = new ProviderEngine();
   engine.addProvider(new WalletSubprovider(wallet, {}));
   engine.addProvider(new Web3Subprovider(new web3.providers.HttpProvider(url, { keepAlive: true, timeout: 1000000 })));
-  engine.on = (block) => {}
+  engine.on = (block) => { }
   engine.start();
   return engine;
 }
@@ -33,8 +33,8 @@ module.exports = {
       confirmations: 0,
       deploymentPollingInterval: 1000,
       skipDryRun: true,
-      timeoutBlocks: 4000, 
-      networkCheckTimeout : 100,
+      timeoutBlocks: 4000,
+      networkCheckTimeout: 100,
     },
     testnet: {
       network_id: "97",
@@ -69,4 +69,11 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    "truffle-plugin-verify"
+  ],
+
+  api_keys: {
+    etherscan: nconf.get("ETHERSCAN_API_KEY")
+  }
 }
